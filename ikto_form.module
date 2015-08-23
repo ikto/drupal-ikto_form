@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Form element validation handler for integer elements that must be not negative.
+ */
+function ikto_form_element_validate_integer_not_negative($element, &$form_state) {
+  $value = $element['#value'];
+  if ($value !== '' && (!is_numeric($value) || intval($value) != $value || $value < 0)) {
+    form_error($element, t('%name must be a not negative integer.', array('%name' => $element['#title'])));
+  }
+}
+
+/**
+ * Form element validation handler for number elements that must be from 0 to 1 inclusively.
+ */
+function ikto_form_element_validate_number_zero_one($element, &$form_state) {
+  $value = $element['#value'];
+  if ($value !== '' && (!is_numeric($value) || $value < 0 || $value > 1)) {
+    form_error($element, t('%name must be a number from 0 to 1 inclusively.', array('%name' => $element['#title'])));
+  }
+}
+
+/**
+ * Form element validation handler for number elements that must be not negative.
+ */
+function ikto_form_element_validate_number_not_negative($element, &$form_state) {
+  $value = $element['#value'];
+  if ($value !== '' && (!is_numeric($value) || $value < 0)) {
+    form_error($element, t('%name must be a not negative number.', array('%name' => $element['#title'])));
+  }
+}

@@ -1,0 +1,4 @@
+name = IKTO Form
+description = Extra stuff for form building.
+package = Form Elements
+core = 7.x
